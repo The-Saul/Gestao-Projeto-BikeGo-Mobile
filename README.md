@@ -96,7 +96,7 @@ Apresenta:
 
 **Saul Damasceno**
 **Giselle Alves**
-
+**Carlos Eduardo**
 ---
 
 ## 📌 Status do Projeto
@@ -119,7 +119,8 @@ Como possíveis evoluções do projeto:
 * Histórico de viagens;
 * Sistema de pontos e conquistas;
 * Monitoramento de impacto ambiental;
-* Aplicativo para dispositivos móveis.
+* Aplicativo para dispositivos móveis;
+* Construção de API.
 
 ---
 
