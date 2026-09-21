@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home_page.dart';
+import 'screens/login_page.dart';
 
 void main() {
   runApp(const EcoMoveApp());
@@ -13,7 +13,7 @@ class EcoMoveApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'BikeGo!',
-      home: const HomePage(),
+      home: const LoginScreen(),
     );
   }
 }
