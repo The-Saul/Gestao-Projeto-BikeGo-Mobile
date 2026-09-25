@@ -150,6 +150,7 @@ class _HomePageState extends State<HomePage> {
                               child: MapMarker(
                                 color: Color(0xFF0FBA7A),
                                 icon: Icons.directions_bike,
+                                value: 'R\$15,99',
                               ),
                             ),
 
@@ -159,6 +160,7 @@ class _HomePageState extends State<HomePage> {
                               child: MapMarker(
                                 color: Color(0xFF0FBA7A),
                                 icon: Icons.directions_bike,
+                                value: 'R\$11,99',
                               ),
                             ),
 
@@ -168,6 +170,7 @@ class _HomePageState extends State<HomePage> {
                               child: MapMarker(
                                 color: Color(0xFF0FBA7A),
                                 icon: Icons.directions_bike,
+                                value: 'R\$8,50',
                               ),
                             ),
                           ],
@@ -447,34 +450,66 @@ class ImpactCard extends StatelessWidget {
 class MapMarker extends StatelessWidget {
   final Color color;
   final IconData icon;
+  final String? value;
 
   const MapMarker({
     super.key,
     required this.color,
     required this.icon,
+    this.value,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 35,
-      height: 35,
-      decoration: BoxDecoration(
-        color: color,
-        shape: BoxShape.circle,
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: 0.25),
-            blurRadius: 8,
-            spreadRadius: 2,
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          width: 35,
+          height: 35,
+          decoration: BoxDecoration(
+            color: color,
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: 0.25),
+                blurRadius: 8,
+                spreadRadius: 2,
+              ),
+            ],
+          ),
+          child: Icon(
+            icon,
+            color: Colors.white,
+            size: 18,
+          ),
+        ),
+        if (value != null) ...[
+          const SizedBox(height: 3),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.08),
+                  blurRadius: 4,
+                  offset: const Offset(0, 1),
+                ),
+              ],
+            ),
+            child: Text(
+              value!,
+              style: const TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF263238),
+              ),
+            ),
           ),
         ],
-      ),
-      child: Icon(
-        icon,
-        color: Colors.white,
-        size: 18,
-      ),
+      ],
     );
   }
 }

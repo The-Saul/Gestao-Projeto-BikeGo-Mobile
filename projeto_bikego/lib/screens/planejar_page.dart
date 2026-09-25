@@ -252,6 +252,17 @@ class PlanejarPage extends StatelessWidget {
                                   color: Colors.orange.shade600,
                                 ),
                               ),
+
+                              const SizedBox(height: 2),
+
+                              const Text(
+                                'R\$15,99',
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF0FBA7A),
+                                ),
+                              ),
                             ],
                           ),
                         ],
@@ -647,12 +658,12 @@ class RoutePainter extends CustomPainter {
     );
 
     path.cubicTo(
-      190,
+      size.width * .6,
       135,
-      180,
+      size.width * .55,
       45,
-      245,
-      88,
+      size.width - 53,
+      89,
     );
 
     canvas.drawPath(
